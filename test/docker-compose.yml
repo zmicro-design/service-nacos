@@ -1,0 +1,13 @@
+services:
+  nacos:
+    restart: always
+    image: whatwewant/nacos:${SERVICE_NACOS_IMAGE_VERSION}
+    environment:
+      PORT: $SERVICE_NACOS_PORT
+      USERNAME: ${SERVICE_NACOS_USERNAME}
+      PASSWORD: ${SERVICE_NACOS_PASSWORD}
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress

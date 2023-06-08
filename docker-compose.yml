@@ -1,0 +1,17 @@
+services:
+  nacos:
+    restart: always
+    image: nacos/nacos-server:${SERVICE_NACOS_IMAGE_VERSION}
+    # ports:
+    #   - 0.0.0.0:${SERVICE_NACOS_PORT}:8848
+    environment:
+      # PORT: $SERVICE_NACOS_PORT
+      MODE: standalone
+    volumes:
+      - ${SERVICE_DATA}:/home/nacos/data
+      - ${SERVICE_CONFIGS}:/home/nacos/conf
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress
