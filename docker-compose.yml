@@ -9,7 +9,7 @@ services:
       MODE: standalone
     volumes:
       - ${SERVICE_DATA}/nacos:/home/nacos/data
-      - ${SERVICE_CONFIGS}/nacos:/home/nacos/conf
+      # - ${SERVICE_CONFIGS}/nacos:/home/nacos/conf
       
 networks:
   default:
