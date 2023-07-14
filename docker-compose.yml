@@ -4,6 +4,8 @@ services:
     image: nacos/nacos-server:${SERVICE_NACOS_IMAGE_VERSION}
     ports:
       - 0.0.0.0:${SERVICE_NACOS_PORT}:8848
+      - 0.0.0.0:${SERVICE_NACOS_GRPC_CONNECT_PORT:-9848}:9848
+      - 0.0.0.0:${SERVICE_NACOS_GRPC_NTP_PORT:-9849}:9849
     environment:
       # PORT: $SERVICE_NACOS_PORT
       MODE: standalone
