@@ -12,6 +12,8 @@ services:
     volumes:
       - ${SERVICE_DATA}/nacos:/home/nacos/data
       # - ${SERVICE_CONFIGS}/nacos:/home/nacos/conf
+    mem_limit: 4096m
+    cpus: 2
       
 networks:
   default:
